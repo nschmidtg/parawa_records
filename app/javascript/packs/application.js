@@ -21,8 +21,12 @@ import Vue from 'vue/dist/vue.esm';
 
 
 import PostGrid from '../components/post-grid'
+import PostSpotify from '../components/post-spotify'
+import PostSoundcloud from '../components/post-soundcloud'
 
 Vue.component('post-grid', PostGrid);
+Vue.component('post-spotify', PostSpotify);
+Vue.component('post-soundcloud', PostSoundcloud);
 
 document.addEventListener('DOMContentLoaded', () => {
   return new Vue({

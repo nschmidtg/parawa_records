@@ -1,13 +1,18 @@
 <template>
-  <div>
+  <div class="main-content">
     <h3>
       Portfolio
     </h3>
-    <div
-      v-for="post in posts"
-      :key="post.key"
-    >
-      {{ post.name }}
+    <div class="row">
+      <div
+        v-for="post in posts"
+        :key="post.key"
+      >
+        <component v-bind:is="whichComponent(post.contentType)"
+          :post="post"
+        >
+        </component>
+      </div>
     </div>
   </div>
 </template>
@@ -26,6 +31,19 @@ export default {
     };
   },
   methods: {
+    whichComponent(value) {
+      console.log(value)
+      switch(value) {
+        case 1:
+          return "post-spotify"
+          break;
+        case 2:
+          return "post-soundcloud"
+          break;
+        default:
+          // code block
+      }
+    }
   },
   mounted() {
     if (!this.initialLoad) {
