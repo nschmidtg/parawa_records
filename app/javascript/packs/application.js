@@ -23,10 +23,17 @@ import Vue from 'vue/dist/vue.esm';
 import PostGrid from '../components/post-grid'
 import PostSpotify from '../components/post-spotify'
 import PostSoundcloud from '../components/post-soundcloud'
+import Header from '../components/header'
+import About from '../components/about'
+import Footer from '../components/footer'
 
+
+Vue.component('header-component', Header);
 Vue.component('post-grid', PostGrid);
 Vue.component('post-spotify', PostSpotify);
 Vue.component('post-soundcloud', PostSoundcloud);
+Vue.component('about', About);
+Vue.component('footer-component', Footer);
 
 document.addEventListener('DOMContentLoaded', () => {
   return new Vue({

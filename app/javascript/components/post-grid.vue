@@ -1,8 +1,8 @@
 <template>
   <div class="main-content">
-    <h3>
+    <h2>
       Portfolio
-    </h3>
+    </h2>
     <div class="row">
       <div
         v-for="post in posts"

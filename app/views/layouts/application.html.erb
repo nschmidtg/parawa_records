@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Parawa</title>
+    <title>Nicolas Schmidt</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -13,8 +13,13 @@
     <div
       id="app"
     >
-      <%= render 'layouts/header' %>
+      <header-component>
+      </header-component>
+      <about>
+      </about>
       <%= yield %>
+      <footer-component>
+      </footer-component>
     </div>
   </body>
 </html>
