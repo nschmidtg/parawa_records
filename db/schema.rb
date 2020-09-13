@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2020_09_13_152816) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
@@ -19,8 +22,8 @@ ActiveRecord::Schema.define(version: 2020_09_13_152816) do
   end
 
   create_table "categories_posts", id: false, force: :cascade do |t|
-    t.integer "category_id", null: false
-    t.integer "post_id", null: false
+    t.bigint "category_id", null: false
+    t.bigint "post_id", null: false
     t.index ["category_id", "post_id"], name: "index_categories_posts_on_category_id_and_post_id"
     t.index ["post_id", "category_id"], name: "index_categories_posts_on_post_id_and_category_id"
   end
