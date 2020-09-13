@@ -8,15 +8,30 @@
 
 Post.create([
   {
-    name: "Añoranza", description: "Lorem Ipsum", content_type: 1, artist: "Vicente Viel", year: 2019, url: "https://open.spotify.com/embed/track/4G6t6rJwxH2HgqCVQoeJbU"
+    id: 1, name: "Añoranza", description: "Lorem Ipsum", content_type: 1, artist: "Vicente Viel", year: 2019, url: "https://open.spotify.com/embed/track/4G6t6rJwxH2HgqCVQoeJbU"
   },
   {
-    name: "Frágil", description: "Cancón", content_type: 1, artist: "Vicente Viel", year: 2019, url: "https://open.spotify.com/embed/track/4G6t6rJwxH2HgqCVQoeJbU"
+    id: 2, name: "Frágil", description: "Cancón", content_type: 1, artist: "Vicente Viel", year: 2019, url: "https://open.spotify.com/embed/track/4G6t6rJwxH2HgqCVQoeJbU"
   },
   {
-    name: "Snow", description: "Cancón", content_type: 1, artist: "Vicente Viel", year: 2019, url: "https://open.spotify.com/embed/track/4G6t6rJwxH2HgqCVQoeJbU"
+    id: 3, name: "Snow", description: "Cancón", content_type: 1, artist: "Vicente Viel", year: 2019, url: "https://open.spotify.com/embed/track/4G6t6rJwxH2HgqCVQoeJbU"
   },
   {
-    name: "soundCloud", description: "Cancón", content_type: 2, artist: "Vicente Viel", year: 2019, url: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/844434610&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+    id: 4, name: "soundCloud", description: "Cancón", content_type: 2, artist: "Vicente Viel", year: 2019, url: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/844434610&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
   },
 ])
+Category.create([
+  {
+    id: 1, name: "Mezcla"
+  },
+  {
+    id: 2, name: "Masterización"
+  }
+])
+c1 = Category.find(1)
+c1.posts << Post.where(id: [2, 3])
+c1.save
+
+c2 = Category.find(2)
+c2.posts << Post.where(id: [1, 4])
+c2.save
