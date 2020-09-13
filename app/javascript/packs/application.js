@@ -22,6 +22,7 @@ import Vue from 'vue/dist/vue.esm';
 
 import PostGrid from '../components/post-grid'
 import PostSpotify from '../components/post-spotify'
+import PostYoutube from '../components/post-youtube'
 import PostSoundcloud from '../components/post-soundcloud'
 import Header from '../components/header'
 import About from '../components/about'
@@ -31,6 +32,7 @@ import Filter from '../components/filter'
 
 Vue.component('header-component', Header);
 Vue.component('post-grid', PostGrid);
+Vue.component('post-youtube', PostYoutube);
 Vue.component('post-spotify', PostSpotify);
 Vue.component('post-soundcloud', PostSoundcloud);
 Vue.component('about', About);

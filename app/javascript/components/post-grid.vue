@@ -1,11 +1,12 @@
 <template>
   <div class="main-content">
     <h2>
-      portafolio
+      Portafolio
     </h2>
     <filter-component
       :categories="categories"
       @get-filtered-posts="filterPosts($event)"
+      :active_id="categories[categories.length-1].id"
     >
     </filter-component>
     <div class="row">
@@ -23,7 +24,6 @@
 </template>
 
 <script>
-import { getPosts } from '../api/post';
 import { getCategories } from '../api/category';
 
 export default {
@@ -47,6 +47,8 @@ export default {
           return "post-spotify"
         case 2:
           return "post-soundcloud"
+        case 3:
+          return "post-youtube"
       }
     },
     filterPosts(e){
@@ -56,14 +58,11 @@ export default {
   },
   mounted() {
     if (!this.initialLoad) {
-      getPosts()
-        .then((response_post) => {
-          this.posts = response_post.data.data
-        });
       getCategories()
         .then((response_cat) => {
           this.categories = response_cat.data.data
-          console.log(this.categories)
+          this.posts = this.categories[this.categories.length-1].posts
+          console.log(this.posts)
         });
     }
   },

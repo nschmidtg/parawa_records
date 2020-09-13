@@ -1,12 +1,15 @@
 <template>
   <div class="filter-content">
-    <p
-      v-for="category in categories"
-      :key="category.id"
-      @click="selectedCategory(category)"
-    >
-      {{ category.name }}
-    </p>  
+    <div class="grouped-buttons">
+      <a class="tag"
+        v-for="category in categories"
+        :key="category.id"
+        @click="selectedCategory(category)"
+        :class="checkActive(category)"
+      >
+        {{ category.name }}
+      </a>  
+    </div>  
   </div>
 </template>
 
@@ -14,13 +17,29 @@
 
 export default {
   
-  props: ['categories'],
+  props: ['categories', 'active_id'],
+  data() {
+    return {
+      current_active: {
+        type: Number,
+        default: 0,
+      }
+    };
+  },
   methods: {
     selectedCategory(category) {
-      alert(category.name)
       this.$emit('get-filtered-posts', category.posts);
+      this.current_active = category.id
     },
-  }
+    checkActive(category) {
+      if(category.id === this.current_active) {
+        return 'active'
+      }
+    }
+  },
+  mounted() {
+    this.current_active = this.active_id
+  },
 }
 </script>
 
