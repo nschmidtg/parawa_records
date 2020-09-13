@@ -26,6 +26,7 @@ import PostSoundcloud from '../components/post-soundcloud'
 import Header from '../components/header'
 import About from '../components/about'
 import Footer from '../components/footer'
+import Filter from '../components/filter'
 
 
 Vue.component('header-component', Header);
@@ -34,6 +35,7 @@ Vue.component('post-spotify', PostSpotify);
 Vue.component('post-soundcloud', PostSoundcloud);
 Vue.component('about', About);
 Vue.component('footer-component', Footer);
+Vue.component('filter-component', Filter);
 
 document.addEventListener('DOMContentLoaded', () => {
   return new Vue({

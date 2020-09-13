@@ -40,7 +40,6 @@ export default {
   mounted() {
     navbar = document.getElementById("navbar");
     sticky = 300;
-    console.log(sticky)
     window.addEventListener('scroll', this.addSticky);
   },
 }
