@@ -1,12 +1,13 @@
 <template>
   <div class="main-content">
     <h2>
-      Portafolio
+      portafolio
     </h2>
-    <filter
-      :posts="posts"
+    <filter-component
+      :categories="categories"
+      @get-filtered-posts="filterPosts($event)"
     >
-    </filter>
+    </filter-component>
     <div class="row">
       <div
         v-for="post in posts"
@@ -23,6 +24,7 @@
 
 <script>
 import { getPosts } from '../api/post';
+import { getCategories } from '../api/category';
 
 export default {
   
@@ -31,35 +33,38 @@ export default {
       posts: {
         type: Object,
         default: [],
-      }
+      },
+      categories: {
+        type: Array,
+        default: [],
+      },
     };
   },
   methods: {
-    filterPosts(category){
-
-    },
     whichComponent(value) {
-      console.log(value)
       switch(value) {
         case 1:
           return "post-spotify"
-          break;
         case 2:
           return "post-soundcloud"
-          break;
-        default:
-          // code block
       }
+    },
+    filterPosts(e){
+      console.log(e);
+      this.posts = e;
     }
   },
   mounted() {
     if (!this.initialLoad) {
       getPosts()
-        .then((response) => {
-          this.posts = response.data.data
-          console.log(response)
+        .then((response_post) => {
+          this.posts = response_post.data.data
         });
-      console.log(this.posts)
+      getCategories()
+        .then((response_cat) => {
+          this.categories = response_cat.data.data
+          console.log(this.categories)
+        });
     }
   },
 }

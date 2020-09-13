@@ -13,17 +13,7 @@
 
 export default {
   
-  props: {
-    post: {
-      type: Object,
-      defaul: null,
-    }
-  },
-  methods: {
-  },
-  mounted() {
-   
-  },
+  props: ['post']
 }
 </script>
 
