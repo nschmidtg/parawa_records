@@ -1,8 +1,12 @@
 <template>
   <div class="main-content">
     <h2>
-      Portfolio
+      Portafolio
     </h2>
+    <filter
+      :posts="posts"
+    >
+    </filter>
     <div class="row">
       <div
         v-for="post in posts"
@@ -31,6 +35,9 @@ export default {
     };
   },
   methods: {
+    filterPosts(category){
+
+    },
     whichComponent(value) {
       console.log(value)
       switch(value) {
