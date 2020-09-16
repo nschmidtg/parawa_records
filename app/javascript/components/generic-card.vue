@@ -1,17 +1,24 @@
 <template>
   <transition name="slide-fade">
-    <div class="column" v-if="show">
-      <div class="card">
-        <h3>
-          {{ post.name }}
-        </h3>
-        <component
-          :is="whichComponent(post.contentType)"
-          :url="post.url"
-        >
-        </component>
-      </div>
-    </div>
+    <flip-card v-if="show">
+      <template slot="front">
+        <div class="column">
+          <div class="card">
+            <h3>
+              {{ post.name }}
+            </h3>
+            <component
+              :is="whichComponent(post.contentType)"
+              :url="post.url"
+            >
+            </component>
+          </div>
+        </div>
+      </template>
+      <template slot="back">
+        <span>Thought u could get rid of me loser?</span>
+      </template>
+    </flip-card>
   </transition>
 </template>
 
