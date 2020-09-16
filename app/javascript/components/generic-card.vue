@@ -2,9 +2,21 @@
   <transition name="slide-fade">
     <div class="column" v-if="show">
       <div class="card">
-        <h3>
-          {{ post.name }}
-        </h3>
+        <flip-card>
+          <template slot="front">            
+            <h3>
+              {{ post.name }}
+            </h3>
+            <h4>
+              {{ post.artist }} - {{ post.year }}
+            </h4>
+          </template>
+          <template slot="back">
+            <span>
+              {{ post.description }}
+            </span>
+          </template>
+        </flip-card>
         <component
           :is="whichComponent(post.contentType)"
           :url="post.url"

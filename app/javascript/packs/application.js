@@ -29,6 +29,7 @@ import About from '../components/about'
 import Footer from '../components/footer'
 import Filter from '../components/filter'
 import GenericCard from '../components/generic-card'
+import FlipCard from '../components/flip-card'
 
 
 Vue.component('header-component', Header);
@@ -40,6 +41,7 @@ Vue.component('about', About);
 Vue.component('footer-component', Footer);
 Vue.component('filter-component', Filter);
 Vue.component('generic-card', GenericCard);
+Vue.component('flip-card', FlipCard);
 
 document.addEventListener('DOMContentLoaded', () => {
   return new Vue({
