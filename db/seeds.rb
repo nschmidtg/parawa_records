@@ -144,7 +144,7 @@ Post.create([
   },
   {
     id: 16,
-    name: "San Ignacio El Bosque- Coeducación",
+    name: "San Ignacio El Bosque - Coeducación",
     description: "Producción musical, mezcla y masterización para spot de coeducación Colegio San Ignacio El Bosque",
     content_type: 3,
     artist: "Nicolás Schmidt",
@@ -208,7 +208,7 @@ Category.create([
   },
   {
     id: 3,
-    name: "Mezcla y Masterización"
+    name: "Mix/Master"
   }
 ])
 
