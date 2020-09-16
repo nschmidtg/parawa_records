@@ -208,15 +208,7 @@ Category.create([
   },
   {
     id: 3,
-    name: "Edición"
-  },
-  {
-    id: 4,
-    name: "Mezcla"
-  },
-  {
-    id: 5,
-    name: "Masterización"
+    name: "Mezcla y Masterización"
   }
 ])
 
@@ -228,16 +220,6 @@ grabacion = Category.find(2)
 grabacion.posts << Post.where(id: [2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 15, 16, 17, 18, 19, 20, 21])
 grabacion.save
 
-edicion = Category.find(3)
-edicion.posts << Post.where(id: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21])
-edicion.save
-
-mezcla = Category.find(4)
-mezcla.posts << Post.where(id: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21])
-mezcla.save
-
-masterizacion = Category.find(5)
-masterizacion.posts << Post.where(id: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21])
-masterizacion.save
-
-
+mixmaster = Category.find(3)
+mixmaster.posts << Post.where(id: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21])
+mixmaster.save
