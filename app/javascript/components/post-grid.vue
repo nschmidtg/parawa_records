@@ -10,15 +10,13 @@
     >
     </filter-component>
     <div class="row">
-      <div
+      <generic-card
         v-for="post in posts"
-        :key="post.key"
+        :key="post.id"
+        :post="post"
+        :show="toShow[post.id]"
       >
-        <component v-bind:is="whichComponent(post.contentType)"
-          :post="post"
-        >
-        </component>
-      </div>
+      </generic-card>
     </div>
   </div>
 </template>
@@ -38,22 +36,19 @@ export default {
         type: Array,
         default: [],
       },
+      toShow: {
+        type: Object,
+        default: null,
+      }
     };
   },
   methods: {
-    whichComponent(value) {
-      switch(value) {
-        case 1:
-          return "post-spotify"
-        case 2:
-          return "post-soundcloud"
-        case 3:
-          return "post-youtube"
-      }
-    },
-    filterPosts(e){
-      console.log(e);
-      this.posts = e;
+    filterPosts(post_ids){
+      var toShowHash = {}
+      this.posts.map(function(post){
+        return toShowHash[post.id] = post_ids.includes(post.id)
+      })
+      this.toShow = toShowHash
     }
   },
   mounted() {
@@ -62,13 +57,13 @@ export default {
         .then((response_cat) => {
           this.categories = response_cat.data.data
           this.posts = this.categories[this.categories.length-1].posts
-          console.log(this.posts)
+          var toShowHash = {}
+          this.posts.map(function(x) {
+            return toShowHash[x.id] = true
+          })
+          this.toShow = toShowHash
         });
     }
   },
 }
 </script>
-
-<style lang="scss">
-
-</style>

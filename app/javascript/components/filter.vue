@@ -28,7 +28,7 @@ export default {
   },
   methods: {
     selectedCategory(category) {
-      this.$emit('get-filtered-posts', category.posts);
+      this.$emit('get-filtered-posts', category.posts.map(function(x){return x.id}));
       this.current_active = category.id
     },
     checkActive(category) {

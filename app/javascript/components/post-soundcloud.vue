@@ -1,20 +1,13 @@
 <template>
-  <div class="column">
-    <div class="card">
-      <h3>
-        {{ post.name }}
-      </h3>
-      <iframe width="100%" height="250" scrolling="no" frameborder="no" allow="autoplay" :src="post.url">
-      </iframe>
-    </div>
-  </div>
+  <iframe width="100%" height="250" scrolling="no" frameborder="no" allow="autoplay" :src="url">
+  </iframe>
 </template>
 
 <script>
 
 export default {
   
-  props: ['post']
+  props: ['url']
 }
 </script>
 
