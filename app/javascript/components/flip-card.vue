@@ -5,10 +5,7 @@
       v-on:mouseover="flipped=true"
       v-on:mouseout="flipped=false"
     >
-      <div
-        class="front"
-        
-      >
+      <div class="front">
         <slot name="front">
         </slot>
       </div>

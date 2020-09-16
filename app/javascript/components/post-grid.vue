@@ -6,7 +6,7 @@
     <filter-component
       :categories="categories"
       @get-filtered-posts="filterPosts($event)"
-      :active_id="categories[categories.length-1].id"
+      :active_id="categories.length"
     >
     </filter-component>
     <div class="row">
@@ -23,6 +23,7 @@
 
 <script>
 import { getCategories } from '../api/category';
+import { getPosts } from '../api/post';
 
 export default {
   
@@ -56,7 +57,12 @@ export default {
       getCategories()
         .then((response_cat) => {
           this.categories = response_cat.data.data
-          this.posts = this.categories[this.categories.length-1].posts
+          this.defaultActiveCat = this.categories.length
+          console.log(this.categories.length)
+        });
+      getPosts()
+        .then((response_posts) => {
+          this.posts = response_posts.data.data
           var toShowHash = {}
           this.posts.map(function(x) {
             return toShowHash[x.id] = true
