@@ -73,54 +73,54 @@ Post.create([
   {
     id: 8,
     name: "Afronautas",
-    description: "Proyecto financiado por Fondart, folio 463664, para la realización de documentales de bandas chilena",
+    description: "Proyecto desarrollado por Antenna Fractal y financiado por Fondart, folio 463664, para la realización de documentales de bandas chilena",
     content_type: 3,
-    artist: "Alunnizajes - Antenna Fractal",
+    artist: "Alunnizajes",
     year: 2018,
     url: "https://www.youtube.com/embed/Sv99AbeQJQo"
   },
   {
     id: 9,
     name: "La Chimuchina",
-    description: "Proyecto financiado por Fondart, folio 463664, para la realización de documentales de bandas chilena",
+    description: "Proyecto desarrollado por Antenna Fractal y financiado por Fondart, folio 463664, para la realización de documentales de bandas chilena",
     content_type: 3,
-    artist: "Alunnizajes - Antenna Fractal",
+    artist: "Alunnizajes",
     year: 2018,
     url: "https://www.youtube.com/embed/nYQ5mguiHmc"
   },
   {
     id: 10,
     name: "An Go",
-    description: "Proyecto financiado por Fondart, folio 463664, para la realización de documentales de bandas chilena",
+    description: "Proyecto desarrollado por Antenna Fractal y financiado por Fondart, folio 463664, para la realización de documentales de bandas chilena",
     content_type: 3,
-    artist: "Alunnizajes - Antenna Fractal",
+    artist: "Alunnizajes",
     year: 2018,
     url: "https://www.youtube.com/embed/_JCgvbOYMlA"
   },
   {
     id: 11,
     name: "Nube",
-    description: "Proyecto financiado por Fondart, folio 463664, para la realización de documentales de bandas chilena",
+    description: "Proyecto desarrollado por Antenna Fractal y financiado por Fondart, folio 463664, para la realización de documentales de bandas chilena",
     content_type: 3,
-    artist: "Alunnizajes - Antenna Fractal",
+    artist: "Alunnizajes",
     year: 2018,
     url: "https://www.youtube.com/embed/nyxhmueTne4"
   },
   {
     id: 12,
     name: "Teoría de Maicol",
-    description: "Proyecto financiado por Fondart, folio 463664, para la realización de documentales de bandas chilena",
+    description: "Proyecto desarrollado por Antenna Fractal y financiado por Fondart, folio 463664, para la realización de documentales de bandas chilena",
     content_type: 3,
-    artist: "Alunnizajes - Antenna Fractal",
+    artist: "Alunnizajes",
     year: 2018,
     url: "https://www.youtube.com/embed/l6eWFDMKEVw"
   },
   {
     id: 13,
     name: "Tomás Brantmayer",
-    description: "Proyecto financiado por Fondart, folio 463664, para la realización de documentales de bandas chilena",
+    description: "Proyecto desarrollado por Antenna Fractal y financiado por Fondart, folio 463664, para la realización de documentales de bandas chilena",
     content_type: 3,
-    artist: "Alunnizajes - Antenna Fractal",
+    artist: "Alunnizajes",
     year: 2018,
     url: "https://www.youtube.com/embed/29Mg5RPSrpI"
   },
@@ -129,7 +129,7 @@ Post.create([
     name: "Elvira López",
     description: "Mezcla y masterización de la cápsula audiovisual de Elvira lópez",
     content_type: 3,
-    artist: "Alunnizajes - Antenna Fractal",
+    artist: "Alunnizajes",
     year: 2017,
     url: "https://www.youtube.com/embed/zleTniqngCg"
   },
@@ -144,7 +144,7 @@ Post.create([
   },
   {
     id: 16,
-    name: "San Ignacio El Bosque- Coeducación",
+    name: "San Ignacio - Coeducación",
     description: "Producción musical, mezcla y masterización para spot de coeducación Colegio San Ignacio El Bosque",
     content_type: 3,
     artist: "Nicolás Schmidt",
@@ -208,7 +208,7 @@ Category.create([
   },
   {
     id: 3,
-    name: "Mezcla y Masterización"
+    name: "Mix / Master"
   }
 ])
 

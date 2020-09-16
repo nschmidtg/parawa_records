@@ -1,21 +1,20 @@
 <template>
   <div v-bind:class="flipped ? 'flip-container flipped': 'flip-container'">
-    <div class="flipper">
-      <div class="front">
+    <div
+      class="flipper"
+      v-on:mouseover="flipped=true"
+      v-on:mouseout="flipped=false"
+    >
+      <div
+        class="front"
+        
+      >
         <slot name="front">
         </slot>
-        <v-icon class="frontFlipBtn" 
-          v-on:click="flipped=true">
-          redo
-        </v-icon>
       </div>
       <div class="back">
         <slot name="back">
         </slot>
-        <v-icon class="backFlipBtn" 
-          v-on:click="flipped=false">
-          redo
-        </v-icon>
       </div>
     </div>
   </div>
